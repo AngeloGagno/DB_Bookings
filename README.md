@@ -32,15 +32,11 @@ Certifique-se de ter o seguinte instalado no seu ambiente de desenvolvimento:
     pip install -r requirements.txt
  ```
 
-3. **Entrar na Pasta do Programa**
- ```bash
-    cd src
- ```
-4. **Configure o banco de dados**: 
+3. **Configure o banco de dados**: 
 ```
     Crie um arquivo .env na raiz do projeto com a string de conexão do banco de dados
 ```
-5. **Executando o Script para uma determinada data**
+4. **Executando o Script para uma determinada data**
  ```bash
     python ./src/main.py --start_date data_inicio --end_date data_fim
  ```
