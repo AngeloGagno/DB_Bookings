@@ -1,7 +1,7 @@
 from API_Data.get_bookings_description import get_booking_updates
 from Database.database import get_db,Base,engine
 from Database.commit_to_db import commit_data_on_db
-import argparse
+
 
 def main():
     # Status predefinidos para as reservas
