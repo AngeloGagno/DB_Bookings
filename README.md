@@ -37,6 +37,13 @@ Certifique-se de ter o seguinte instalado no seu ambiente de desenvolvimento:
     Crie um arquivo .env na raiz do projeto com a string de conexão do banco de dados
 ```
 4. **Executando o Script para uma determinada data**
+  - Caso queira obter reservas em determinadas datas de check-in
  ```bash
-    python ./src/main.py --start_date data_inicio --end_date data_fim
+    python ./src/Bookings.py --start_date data_inicio --end_date data_fim
  ```
+
+  - Caso queira realizar o Update diario da ocorrencia de reservas nas ultimas 24 horas.
+ ```bash
+    python ./src/Booking_Update.py
+ ```
+ 

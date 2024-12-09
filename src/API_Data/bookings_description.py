@@ -1,6 +1,4 @@
 
-from API_Data.Get.request_api import RequestBookingsAPI
-
 class Booking:
     def __init__(self,data):
         self.data = data['data']

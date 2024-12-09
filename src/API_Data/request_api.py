@@ -18,6 +18,7 @@ class RequestBookingsAPI:
         self.header = self._header()
         self.raw_bookings_url = self._raw_bookings_url()
         self.final_url = self.get_booking_url()
+        self.update_url = self.get_update_url()
     def _apikey(self):
         load_dotenv()
         return os.getenv('API_AVANTIO')
@@ -75,3 +76,10 @@ class RequestBookingsAPI:
             return requests.get(url_pag,headers=self.header).json()
         return requests.get(self.final_url,headers=self.header).json()
 
+    def get_update_url(self):
+        return 'https://api.avantio.pro/pms/v2/booking-updates?pagination_size=50'
+    
+    def get_bookings_update(self,url_pag =None):
+        if url_pag:
+            return requests.get(url_pag,headers=self.header).json()
+        return requests.get(self.update_url,headers=self.header).json()

@@ -1,4 +1,4 @@
-from API_Data.Get.get_bookings_description import get_bookings_description
+from API_Data.get_bookings_description import get_bookings_description
 from Database.database import get_db,Base,engine
 from Database.commit_to_db import commit_data_on_db
 import argparse
@@ -24,12 +24,12 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Busca e armazena reservas de um período.")
     parser.add_argument(
         "--start_date",
-        required=True,
+        required=False,
         help="Data inicial no formato YYYY-MM-DD"
     )
     parser.add_argument(
         "--end_date",
-        required=True,
+        required=False,
         help="Data final no formato YYYY-MM-DD"
     )
     
