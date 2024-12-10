@@ -20,7 +20,6 @@ def main(start_date=None, end_date=None):
     commit_data_on_db(bookings=data, db=get_db())
 
 if __name__ == "__main__":
-    # Configuração do argparse para argumentos de linha de comando
     parser = argparse.ArgumentParser(description="Busca e armazena reservas de um período.")
     parser.add_argument(
         "--start_date",
@@ -32,9 +31,7 @@ if __name__ == "__main__":
         required=False,
         help="Data final no formato YYYY-MM-DD"
     )
-    
-    # Parse dos argumentos da linha de comando
     args = parser.parse_args()
     
-    # Chama a função principal com os argumentos
+    
     main(start_date=args.start_date, end_date=args.end_date)

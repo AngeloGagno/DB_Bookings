@@ -1,4 +1,6 @@
 
+from datetime import datetime
+
 class Booking:
     def __init__(self,data):
         self.data = data['data']
@@ -14,7 +16,10 @@ class Booking:
         return self.data['stayDates']['departure']
     
     def creation_date(self):
-        return self.data['creationDate']
+        date_raw = self.data['creationDate']
+        date = datetime.strptime(date_raw, "%Y-%m-%dT%H:%M:%S.%fZ")
+        date_final = date.strftime("%Y-%m-%d")
+        return date_final
 
     def status(self):
         return self.data['status']

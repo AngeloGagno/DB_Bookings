@@ -1,5 +1,4 @@
-from sqlalchemy import Column, String, Float, DateTime
-from sqlalchemy.sql import func
+from sqlalchemy import Column, String, Float
 from Database.database import Base
 
 class BD_Bookings(Base):

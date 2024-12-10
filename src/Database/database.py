@@ -4,9 +4,10 @@ from sqlalchemy import create_engine
 from dotenv import load_dotenv
 import os 
 
-def load_db_string():
+
+def load_db_string(): 
     load_dotenv()
-    return os.getenv("DATABASE_URL")
+    return os.getenv("DATABASE_URL_")
 
 db_url = load_db_string()
 
@@ -17,6 +18,7 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
 def get_db():
+    
     db = SessionLocal()
     
     try:

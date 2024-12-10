@@ -23,7 +23,6 @@ def bookings_update():
     id_list = []
     while url_request:
         data = RequestBookingsAPI().get_bookings_update(url_request)
-        print(url_request)
         id_list.extend(i['id'] for i in data['data'])
         url_request = data.get('_links', {}).get('next')     
     return id_list 
