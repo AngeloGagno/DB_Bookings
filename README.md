@@ -27,23 +27,13 @@ Certifique-se de ter o seguinte instalado no seu ambiente de desenvolvimento:
    git clone https://github.com/AngeloGagno/DB_Bookings.git
    cd DB_Bookings
     ```
-2. **Instalacao das Dependencias**:
- ```bash
-    pip install -r requirements.txt
- ```
 
-3. **Configure o banco de dados**: 
+2. **Configure o banco de dados**: 
 ```
-    Crie um arquivo .env na raiz do projeto com a string de conexão do banco de dados
+    Crie um arquivo .env na raiz do projeto com a string de conexão do banco de dados e a API Key da Avantio
 ```
-4. **Executando o Script para uma determinada data**
+3. **Executando o docker compose build**
   - Caso queira obter reservas em determinadas datas de check-in
  ```bash
-    python ./src/Bookings.py --start_date data_inicio --end_date data_fim
+   docker-compose run --build
  ```
-
-  - Caso queira realizar o Update diario da ocorrencia de reservas nas ultimas 24 horas.
- ```bash
-    python ./src/Booking_Update.py
- ```
- 
