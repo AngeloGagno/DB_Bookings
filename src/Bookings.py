@@ -1,7 +1,7 @@
 from API_Data.get_bookings_description import get_bookings_description
 from Database.database import get_db,Base,engine
 from Database.commit_to_db import commit_data_on_db
-from datetime import datetime
+from datetime import datetime,timedelta
 from Logs.send_email import email_credenciais,email
 
 def main(start_date=None, end_date=None):
@@ -24,4 +24,6 @@ def main(start_date=None, end_date=None):
         email(credenciais=email_credenciais(),erro=e)
 
 if __name__ == "__main__":
-    main(start_date="2025-01-22", end_date=datetime.now().strftime("%Y-%m-%d"))
+    now = datetime.now().strftime("%Y-%m-%d")
+    last_year =  now - timedelta(days=365)
+    main(start_date=last_year, end_date=now)
