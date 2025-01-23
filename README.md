@@ -15,7 +15,7 @@ Esta aplicação utiliza as bibliotecas **Requests** e **SQLAlchemy** para busca
 Certifique-se de ter o seguinte instalado no seu ambiente de desenvolvimento:
 
 - Python 3.8 ou superior
-- Pip (gerenciador de pacotes do Python)
+- Docker Instalado
 - Um banco de dados relacional (MySQL, PostgreSQL, SQLite, etc.)
 
 ---
