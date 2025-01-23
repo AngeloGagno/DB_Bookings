@@ -7,7 +7,7 @@ import os
 
 def load_db_string(): 
     load_dotenv()
-    return os.getenv("DATABASE_URL_")
+    return os.getenv("DATABASE_URL1")
 
 db_url = load_db_string()
 

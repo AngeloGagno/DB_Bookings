@@ -4,4 +4,4 @@ COPY pyproject.toml poetry.lock /src/
 WORKDIR /src
 RUN poetry config virtualenvs.create false && poetry install --no-root 
 COPY . /src 
-CMD ["python", "/src/Booking_Update.py"]
+CMD ["python", "/src/Bookings.py"]
