@@ -24,6 +24,6 @@ def main(start_date=None, end_date=None):
         email(credenciais=email_credenciais(),erro=e)
 
 if __name__ == "__main__":
-    now = datetime.now().strftime("%Y-%m-%d")
-    last_year =  now - timedelta(days=365)
-    main(start_date=last_year, end_date=now)
+    now = datetime.now()
+    day =  now - timedelta(days=3)
+    main(start_date=day.strftime("%Y-%m-%d"), end_date=now.strftime("%Y-%m-%d"))
