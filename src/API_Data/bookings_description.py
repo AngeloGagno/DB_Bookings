@@ -16,7 +16,10 @@ class Booking:
         return self.data['stayDates']['departure']
     
     def update_date(self):
-        return self.data['updatedAt']
+        update = self.data['updatedAt']        
+        date = datetime.strptime(update, "%Y-%m-%dT%H:%M:%S.%fZ")
+        update_date = date.strftime("%Y-%m-%d")
+        return update_date 
 
     def creation_date(self):
         date_raw = self.data['creationDate']
