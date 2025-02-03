@@ -12,17 +12,18 @@ def main(start_date=None, end_date=None):
     Status = ['CONFIRMED', 'PAID', 'OWNER', 'UNAVAILABLE', 'UNPAID','CANCELLED']
     
     # Busca as reservas da API
-
-    data = get_bookings_description(date_begin=start_date, date_end=end_date, status=Status)
-    print(data)
-    # Cria as tabelas no banco de dados, se ainda não existirem
-    Base.metadata.create_all(engine)
+    try:
+        data = get_bookings_description(date_begin=start_date, date_end=end_date, status=Status)
         
-    # Armazena as reservas no banco de dados
-    commit_data_on_db(bookings=data, db=get_db())
+        # Cria as tabelas no banco de dados, se ainda não existirem
+        Base.metadata.create_all(engine)
+        
+        # Armazena as reservas no banco de dados
+        commit_data_on_db(bookings=data, db=get_db())
+    except Exception as e:
+        email(credenciais=email_credenciais(),erro=e)
 
-    
 if __name__ == "__main__":
     now = datetime.now()
-    day =  now - timedelta(days=1)
+    day =  now - timedelta(days=365)
     main(start_date=day.strftime("%Y-%m-%d"), end_date=now.strftime("%Y-%m-%d"))
