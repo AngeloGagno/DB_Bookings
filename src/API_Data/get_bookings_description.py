@@ -11,6 +11,7 @@ def get_bookings_description(date_begin=None,date_end=None,status=None):
         caract = Booking(data)
         booking = {'id_booking':id,'Portal Reference':caract.reference(),'check_in_date':caract.check_in_date(),
                    'check_out_date':caract.check_out_date(),
+                   'update_date':caract.update_date(),
                    'reservation_date':caract.creation_date(),
                     'status':caract.status(), 'accommodation_code':caract.accommodation(),
                     'sale_channel':caract.sales_channel(),'total_payment':caract.total_payment(), 'net_payment':caract.net_payment(),
@@ -25,7 +26,7 @@ def get_booking_updates():
         data = RequestBookingsAPI().get_api_booking_description(booking_id=id)
         caract = Booking(data)
         booking = {'id_booking':id,'Portal Reference':caract.reference(),'check_in_date':caract.check_in_date(),
-                   'check_out_date':caract.check_out_date(),
+                   'check_out_date':caract.check_out_date(),'update_date':caract.update_date(),
                    'reservation_date':caract.creation_date(),
                     'status':caract.status(), 'accommodation_code':caract.accommodation(),
                     'sale_channel':caract.sales_channel(),'total_payment':caract.total_payment(), 'net_payment':caract.net_payment(),

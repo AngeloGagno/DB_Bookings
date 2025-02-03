@@ -8,6 +8,7 @@ def commit_data_on_db(bookings,db:Session):
                 portal_reference=item['Portal Reference'],
                 check_in_data = item['check_in_date'],
                 check_out_data=item['check_out_date'],
+                update_date=item['update_date'],
                 reservation_date=item['reservation_date'],
                 status=item['status'],
                 accommodation_code=item['accommodation_code'],

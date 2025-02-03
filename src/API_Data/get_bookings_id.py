@@ -28,5 +28,5 @@ def bookings_update():
     return id_list 
 if __name__ == "__main__":
     Status = ['CONFIRMED','PAID','OWNER','UNAVAILABLE','UNPAID']
-    print(len(create_booking_list(date_begin="2024-01-01",date_end="2024-01-31",status=Status)))
+    print(len(create_booking_list(date_begin="2024-21-01",date_end="2024-01-31",status=Status)))
         

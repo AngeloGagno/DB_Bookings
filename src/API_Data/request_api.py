@@ -24,7 +24,7 @@ class RequestBookingsAPI:
         """
         Le a variavel de ambiente que contem a API Key: API_AVANTIO
         """
-        load_dotenv()
+        load_dotenv(override=True)
         return os.getenv('API_AVANTIO')
 
     def _header(self):
